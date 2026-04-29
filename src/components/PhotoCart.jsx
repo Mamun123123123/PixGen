@@ -1,5 +1,6 @@
 import { Card } from '@heroui/react'
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { BiDownload } from 'react-icons/bi';
 import { FaHeart } from "react-icons/fa";
@@ -22,7 +23,9 @@ const PhotoCart = ({photo}) => {
         <p><BiDownload /></p>
         <p>{photo.downloads}</p></div>
      </div>
+     <Link href={`/all-photos/${photo.id}`}>
      <button variant='outline' className=' border  rounded-3xl p-1 w-full'>View</button>
+     </Link>
     </Card>
   )
 }
