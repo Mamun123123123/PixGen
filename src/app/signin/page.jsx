@@ -11,6 +11,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 export default function SigninPage() {
@@ -41,7 +42,7 @@ if(res){
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+      <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
       <Form
         className="flex w-96 mx-auto flex-col gap-4"
@@ -104,6 +105,12 @@ if(res){
             Reset
           </Button>
         </div>
+        <p className="text-sm text-gray-500 text-center">
+  Don't have an account?
+  <Link href="/signup" className="text-blue-600 font-medium hover:text-blue-700 hover:underline ml-1">
+    Create account
+  </Link>
+</p>
       </Form>
     </Card>
   );
