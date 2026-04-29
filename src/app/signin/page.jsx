@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { GrGoogle } from "react-icons/gr";
 
 export default function SigninPage() {
   const {
@@ -39,6 +40,13 @@ if(res){
   alert("Sign in Successfully")
 }
   };
+
+  const handleGoogelSignIn = async() => {
+     const data = await authClient.signIn.social({
+    provider: "google",
+  
+})
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -112,6 +120,9 @@ if(res){
   </Link>
 </p>
       </Form>
+      <p className="text-center">Or</p>
+      <button className="text-center" onClick={handleGoogelSignIn}><GrGoogle/>Sign In with Google</button>
+
     </Card>
   );
 }
