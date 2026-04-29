@@ -38,7 +38,7 @@ if(error){
 }
 if(res){
   alert("Sign up Successfully")
-  router.push('/signin')
+  router.push('/')
 }
   };
 
