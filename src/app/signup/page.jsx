@@ -23,13 +23,13 @@ export default function SignUpPage() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-    const { name, email, password, photo } = data;
+    console.log("data" ,data);
+    const { name, email, password, image } = data;
    const { data: res, error } = await authClient.signUp.email({
     name: name, // required
     email: email, // required
     password: password, // required
-    image: photo,
+    image: image,
     callbackURL: "/",
 });
 console.log(res,error);
